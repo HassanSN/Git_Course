@@ -1,0 +1,15 @@
+@Test
+//TestCase = {"TNTC0392041"}
+public void CreateCSVFileWithSpecificServiceCode() throws Exception {
+List<String> serviceCodes = new ArrayList<>();
+        serviceCodes.add("\"VMSSNP\"");
+        serviceCodes.add("\"RTSP\"");
+        serviceCodes.add("\"DSCON\"");
+        List<String> logLevels= new ArrayList<>();
+                List<String> correlationIds = new ArrayList<>();
+                        logLevels.add("\"error\"");
+                        Response response = LogRetrievalDriver.getLoggerPresentingResponse(200, serviceCodes,
+                        timeUTCNowTo,timeUTCNowFrom, logLevels, correlationIds);
+                        Assert.assertEquals(response.getStatusCode(),200);
+                        System.out.println(response.getBody().asPrettyString());
+                        }
